@@ -31,6 +31,10 @@ module.exports = {
       {
         test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
         loader: "file-loader"
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       }
     ]
   },
@@ -44,10 +48,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'Title',
-      filename: '../index.html'
+      filename: '../index.html',
+      template: 'template.html'
     })
   ],
 
   watch: NODE_ENV === 'development',
-  devtool: 'source-map'
+  devtool: NODE_ENV === 'development' ? 'source-map' : ''
 };
