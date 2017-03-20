@@ -2,7 +2,9 @@ import welcome from './welcome';
 
 welcome('home');
 
-// import
+const template = require('./template.tpl.html');
+const output = template({greeting: 'Hello World.'});
+console.log(output);
 
 class TBWidget {
   constructor(settings) {

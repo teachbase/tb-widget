@@ -33,9 +33,18 @@ module.exports = {
         loader: "file-loader"
       },
       {
-        test: /\.html$/,
-        loader: 'html-loader'
+        test: /\.tpl.html$/,
+        use: [{
+          loader: 'blueimp-tmpl-loader',
+          options: {
+            minimize: true
+          }
+        }]
       }
+      // {
+      //   test: /\.html$/,
+      //   loader: 'html-loader'
+      // }
     ]
   },
   plugins: [
@@ -49,7 +58,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Title',
       filename: '../index.html',
-      template: 'template.html'
+      // template: './template.tpl.html'
     })
   ],
 
