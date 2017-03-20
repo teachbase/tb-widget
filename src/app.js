@@ -10,6 +10,8 @@ const template = require('./template.tpl.html');
 // const output = template({greeting: 'Hello World.'});
 // console.log(output);
 
+import './style.css';
+
 class TBWidget {
   constructor(settings) {
     this.settings = settings;

@@ -40,6 +40,10 @@ module.exports = {
             minimize: true
           }
         }]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       }
       // {
       //   test: /\.html$/,
