@@ -42,7 +42,35 @@ module.exports = {
         }]
       },
       {
+        test: /global\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: 'inline', // Doesn't work ?
+              plugins: function () {
+                return [
+                  require('postcss-smart-import'),
+                  require('precss'),
+                  require('autoprefixer')
+                ];
+              }
+            }
+          }
+        ],
+      },
+      {
         test: /\.css$/,
+        exclude: /global\.css$/,
         use: [
           {
             loader: 'style-loader'

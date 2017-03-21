@@ -10,7 +10,8 @@ const template = require('./template.tpl.html');
 // const output = template({greeting: 'Hello World.'});
 // console.log(output);
 
-import styles from './style.css';
+import './global.css';
+import styles from './styles/style.css';
 
 class TBWidget {
   constructor(settings) {
@@ -82,8 +83,6 @@ class TBWidget {
   render(data) {
     const r = Object.assign(data, { styles });
     const output = template(r);
-    document.getElementById('tb_widget').className = styles.tb_widget;
-    // document.getElementById('tb_link').className = styles.tb_link;
     document.getElementById('tb_widget').innerHTML = output;
   }
 }
