@@ -50,9 +50,23 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true
+              modules: true,
+              importLoaders: 1
             }
           },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: 'inline', // Doesn't work ?
+              plugins: function () {
+                return [
+                  require('postcss-smart-import'),
+                  require('precss'),
+                  require('autoprefixer')
+                ];
+              }
+            }
+          }
         ],
       }
       // {
