@@ -33,7 +33,15 @@ class TBWidget {
       course: {
         id: this.settings.id,
         title: 'Course title',
-        description: 'Course description'
+        description: 'Course description',
+        img: {
+          src: 'http://cf2.teachbase.ru/system/products/course_sessions/1067/icons/small/845c6d7a765f5a30882d0bbe6118fac11107de59.jpeg',
+          alt: 'Иконка курса'
+        },
+        button: {
+          text: 'Перейти к курсу',
+          url: 'http://go.teachbase.ru/stores/conditoria'
+        }
       }
     });
 
@@ -74,6 +82,8 @@ class TBWidget {
   render(data) {
     const r = Object.assign(data, { styles });
     const output = template(r);
+    document.getElementById('tb_widget').className = styles.tb_widget;
+    // document.getElementById('tb_link').className = styles.tb_link;
     document.getElementById('tb_widget').innerHTML = output;
   }
 }
