@@ -1,12 +1,14 @@
 #tb_widget {
-  width: 300px;
+  width: 298px;
+  border: 1px solid black;
   text-align: center;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 #tb_link {
   display: block;
   margin: 0 auto;
-
   background-color: transparent;
   box-shadow: none;
   color: #337ab7;
@@ -18,11 +20,11 @@
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 10px 20px;
+  padding: 0 20px 10px;
   font-size: 14px;
-  line-height: 1.42857143;
+  //line-height: 1.42857143;
   user-select: none;
+  text-decoration: none;
 
   &:hover,
   &:focus {

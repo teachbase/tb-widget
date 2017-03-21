@@ -11,7 +11,7 @@ const template = require('./template.tpl.html');
 // console.log(output);
 
 import './global.css';
-import styles from './styles/style.css';
+import styles from './style.css';
 
 class TBWidget {
   constructor(settings) {
@@ -34,7 +34,7 @@ class TBWidget {
       course: {
         id: this.settings.id,
         title: 'Course title',
-        description: 'Course description',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad, at beatae blanditiis, consequatur dicta error esse et hic impedit laboriosam laudantium maiores perspiciatis qui repellat rerum saepe sunt ullam?',
         img: {
           src: 'http://cf2.teachbase.ru/system/products/course_sessions/1067/icons/small/845c6d7a765f5a30882d0bbe6118fac11107de59.jpeg',
           alt: 'Иконка курса'
