@@ -1,11 +1,15 @@
 <div class="{%= o.styles.container %}">
   <div class="{%= o.styles.title %}">{%= o.title %}</div>
   <div>
-    <img class="{%= o.styles.img %}" src="{%= o.img.src %}" alt="{%= o.img.alt %}" />
+    <img class="{%= o.styles.img %}"
+         src="{%= o.img.src %}"
+         alt="{%= o.type === 'course' ? 'Course preview' : 'Meeting preview' %}" />
     <div class="{%= o.styles.description %}">{%= o.description %}</div>
     {% if (o.host) { %}
       <div>{%= o.host %}</div>
     {% } %}
-    <a target="_blank" href="{%= o.button.url %}" class="{%= o.styles.button %}">{%= o.button.text %}</a>
+    <a target="_blank" href="{%= o.button.url %}" class="{%= o.styles.button %}">
+      {%= o.type === 'course' ? 'Перейти к курсу' : 'Перейти к вебинару' %}
+    </a>
   </div>
 </div>
