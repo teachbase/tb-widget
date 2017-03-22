@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+process.noDeprecation = true; // for removing loader-utils dev warnings
+
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
