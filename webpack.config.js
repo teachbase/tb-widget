@@ -8,7 +8,6 @@ process.noDeprecation = true; // for removing loader-utils dev warnings
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: './app.js',
     widget: './widget.js'
   },
   output: {
@@ -107,7 +106,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: NODE_ENV === 'development',
       compress: {
         warnings: false
       }
@@ -115,8 +114,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'Title',
-      filename: '../index.html',
-      excludeChunks: ['widget']
+      filename: '../index.html'
     })
   ],
 
