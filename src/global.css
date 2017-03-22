@@ -1,5 +1,6 @@
 #tb_widget {
-  width: 298px;
+  width: 100%;
+  box-sizing: border-box;
   border: 1px solid black;
   text-align: center;
   font-size: 16px;
@@ -20,9 +21,9 @@
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
-  padding: 0 20px 10px;
+  //padding: 0 20px 10px;
+  padding: 10px 20px;
   font-size: 14px;
-  //line-height: 1.42857143;
   user-select: none;
   text-decoration: none;
 
