@@ -1,12 +1,12 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-const template = require('./template.tpl.html');
-const templateLandscape = require('./template-landscape.tpl.html');
+const template = require('./templates/widget.tpl.html');
+const templateLandscape = require('./templates/widget-landscape.tpl.html');
 
 import './global.css';
-import styles from './style.css';
-import stylesLandscape from './style-landscape.css';
+import styles from './styles/widget.css';
+import stylesLandscape from './styles/widget-landscape.css';
 
 class TBWidget {
   constructor(settings) {
