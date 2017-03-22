@@ -6,7 +6,7 @@
   <script src="/assets/app.js"></script>
   <style type="text/css">
     .widget-wrapper {
-      width: 500px;
+      width: 300px;
     }
   </style>
 </head>
@@ -20,10 +20,9 @@
       <div id="tb_widget">
         <script>
           const widget = new TBWidget({
-            type: 'course',
-            id: 1234,
-            account_id: 4321,
-            orientation: 'landscape'
+            type: 'meeting',
+            resourceId: 1234,
+            accountId: 4321
           });
         </script>
         <a id="tb_link" target="_blank" href="http://teachbase.ru?utm_source=widget">

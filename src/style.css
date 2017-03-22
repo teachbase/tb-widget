@@ -1,10 +1,11 @@
 .title {
   padding: 10px 20px;
+  font-size: 16px;
 }
 
 .description {
   padding: 10px 10px 0;
-  font-size: 14px;
+  margin-bottom: 10px;
   text-align: left;
   overflow: hidden;
   display: -webkit-box;
@@ -22,25 +23,22 @@
   text-decoration: none;
   margin: 10px auto;
   color: #fff;
-  background-color: #337ab7;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
   cursor: pointer;
   background-image: none;
+  background-color: #14bd34;
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
   border-radius: 4px;
   user-select: none;
 
   &:hover {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
+    background-color: #109b2b;
   }
 
   &:focus {

@@ -6,11 +6,11 @@
 
 .column {
   display: flex;
-  //height: 200px;
 }
 
 .title {
   padding: 10px 20px;
+  font-size: 16px;
 }
 
 .desc {
@@ -21,7 +21,6 @@
 
 .description {
   padding: 0 10px 10px;
-  font-size: 14px;
   text-align: left;
 }
 
@@ -39,7 +38,7 @@
   text-decoration: none;
   margin: 10px auto;
   color: #fff;
-  background-color: #337ab7;
+  background-color: #14bd34;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -49,15 +48,13 @@
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 14px;
   line-height: 1.42857143;
   border-radius: 4px;
   user-select: none;
 
   &:hover {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
+    background-color: #109b2b;
   }
 
   &:focus {
