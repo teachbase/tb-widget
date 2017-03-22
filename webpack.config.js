@@ -8,7 +8,8 @@ process.noDeprecation = true; // for removing loader-utils dev warnings
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: './app.js'
+    app: './app.js',
+    widget: './widget.js'
   },
   output: {
     filename: '[name].js',
@@ -16,7 +17,10 @@ module.exports = {
     publicPath: '/assets'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './src')
+    port: 3000,
+    contentBase: path.resolve(__dirname, './src'),
+    compress: true,
+    hot: true
   },
   module: {
     rules: [
@@ -99,10 +103,6 @@ module.exports = {
           }
         ],
       }
-      // {
-      //   test: /\.html$/,
-      //   loader: 'html-loader'
-      // }
     ]
   },
   plugins: [
@@ -116,7 +116,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Title',
       filename: '../index.html',
-      // template: './template.tpl.html'
+      excludeChunks: ['widget']
     })
   ],
 
