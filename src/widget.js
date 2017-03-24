@@ -17,9 +17,9 @@ class TBWidget {
 
   mockApiResponses() {
     const mock = new MockAdapter(axios);
-    const { resourceId } = this.settings;
+    const { accountId, resourceId } = this.settings;
 
-    mock.onGet(`/courses/${resourceId}`).reply(200, {
+    mock.onGet(`/accounts/${accountId}/courses/${resourceId}`).reply(200, {
       course: {
         id: resourceId,
         type: 'course',
@@ -34,7 +34,7 @@ class TBWidget {
       }
     });
 
-    mock.onGet(`/meeting/${resourceId}`).reply(200, {
+    mock.onGet(`/accounts/${accountId}/meeting/${resourceId}`).reply(200, {
       meeting: {
         id: resourceId,
         type: 'meeting',
@@ -52,15 +52,19 @@ class TBWidget {
   }
 
   getData() {
-    const { type } = this.settings;
+    const {
+      type,
+      accountId,
+      resourceId
+    } = this.settings;
 
     if (type === 'course') {
-      axios.get(`/courses/${this.settings.resourceId}`)
+      axios.get(`/accounts/${accountId}/courses/${resourceId}`)
         .then((res) => {
           this.render(res.data.course);
         })
     } else if (type === 'meeting') {
-      axios.get(`/meeting/${this.settings.resourceId}`)
+      axios.get(`/accounts/${accountId}/meeting/${resourceId}`)
         .then((res) => {
           this.render(res.data.meeting)
         })
