@@ -19,7 +19,7 @@ class TBWidget {
     const mock = new MockAdapter(axios);
     const { accountId, resourceId } = this.settings;
 
-    mock.onGet(`/accounts/${accountId}/courses/${resourceId}`).reply(200, {
+    mock.onGet(`/accounts/${accountId}/course_sessions/${resourceId}`).reply(200, {
       course: {
         id: resourceId,
         type: 'course',
@@ -59,7 +59,7 @@ class TBWidget {
     } = this.settings;
 
     if (type === 'course') {
-      axios.get(`/accounts/${accountId}/courses/${resourceId}`)
+      axios.get(`/accounts/${accountId}/course_sessions/${resourceId}`)
         .then((res) => {
           this.render(res.data.course);
         })
