@@ -1,12 +1,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
-const template = require('./templates/widget.tpl.html');
-const templateLandscape = require('./templates/widget-landscape.tpl.html');
-
 import './global.css';
-import styles from './styles/widget.css';
-import stylesLandscape from './styles/widget-landscape.css';
 
 class TBWidget {
   constructor(settings) {
@@ -74,11 +69,18 @@ class TBWidget {
   render(data) {
     const { orientation } = this.settings;
 
-    const output = orientation === 'landscape'
-      ? templateLandscape(Object.assign(data, { styles: stylesLandscape }))
-      : template(Object.assign(data, { styles }));
+    let template;
+    let styles;
 
-    document.getElementById('tb_widget').innerHTML = output;
+    if (orientation === 'landscape') {
+      template = require('./templates/widget-landscape.tpl.html');
+      styles = require('./styles/widget-landscape.css');
+    } else {
+      template = require('./templates/widget.tpl.html');
+      styles = require('./styles/widget.css');
+    }
+
+    document.getElementById('tb_widget').innerHTML = template(Object.assign(data, { styles }));
   }
 }
 
