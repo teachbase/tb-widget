@@ -21,7 +21,7 @@ class TBWidget {
           this.render(res.data.course);
         })
     } else if (type === 'meeting') {
-      axios.get(`/api/widgets/accounts/${accountId}/meeting/${resourceId}`)
+      axios.get(`/api/widgets/accounts/${accountId}/meetings/${resourceId}`)
         .then((res) => {
           this.render(res.data.meeting)
         })
