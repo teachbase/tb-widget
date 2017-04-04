@@ -10,18 +10,19 @@ class TBWidget {
 
   getData() {
     const {
+      host,
       type,
       accountId,
       resourceId
     } = this.settings;
 
     if (type === 'course') {
-      axios.get(`/api/widgets/accounts/${accountId}/course_sessions/${resourceId}`)
+      axios.get(`${host}/api/widgets/accounts/${accountId}/course_sessions/${resourceId}`)
         .then((res) => {
           this.render(res.data.course);
         })
     } else if (type === 'meeting') {
-      axios.get(`/api/widgets/accounts/${accountId}/meetings/${resourceId}`)
+      axios.get(`${host}/api/widgets/accounts/${accountId}/meetings/${resourceId}`)
         .then((res) => {
           this.render(res.data.meeting)
         })
