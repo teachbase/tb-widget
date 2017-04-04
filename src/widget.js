@@ -1,4 +1,5 @@
 import axios from 'axios';
+import sanitizeHtml from 'sanitize-html';
 
 import './global.css';
 
@@ -30,7 +31,7 @@ class TBWidget {
   }
 
   render(data) {
-    const { orientation } = this.settings;
+    const { orientation, type } = this.settings;
 
     let template;
     let styles;
@@ -43,7 +44,13 @@ class TBWidget {
       styles = require('./styles/widget.css');
     }
 
-    document.getElementById('tb_widget').innerHTML = template(Object.assign(data, { styles }));
+    const result = document.createElement('div');
+    result.innerHTML = template(Object.assign(data, { styles, type }));
+
+    const description = result.getElementsByClassName(styles.description)[0];
+    description.innerHTML = sanitizeHtml(description.innerText);
+
+    document.getElementById('tb_widget').prepend(result);
   }
 }
 
