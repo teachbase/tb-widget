@@ -6,6 +6,7 @@ import './global.css';
 class TBWidget {
   constructor(settings) {
     this.settings = settings;
+    this.widgetNode = document.currentScript.parentNode;
     this.getData();
   }
 
@@ -50,7 +51,7 @@ class TBWidget {
     const description = result.getElementsByClassName(styles.description)[0];
     description.innerHTML = sanitizeHtml(description.innerText);
 
-    document.getElementById('tb_widget').prepend(result);
+    this.widgetNode.prepend(result);
   }
 }
 
